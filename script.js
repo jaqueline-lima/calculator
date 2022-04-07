@@ -38,3 +38,14 @@ function operate(a, operator, b) {
     }
     return result;
 }
+
+function show(item) {
+    const display = document.querySelector('#display');
+    display.textContent += item;
+}
+
+document.querySelectorAll('#numbers button').forEach(button => {
+    button.addEventListener('click', () => {
+        show(button.textContent);
+    })
+});
