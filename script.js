@@ -47,7 +47,7 @@ function getSecondNumber(displayContent) {
     const operators = ['+', '-', '*', '/'];
     let index;
     for (let i = 0; i <= operators.length; i++) {
-        for (let j = 0; j <= displayContent.length; j++) {
+        for (let j = 0; j < displayContent.length; j++) {
             if (displayContent[i] === operators[j]) {
                 index = i;
             }
@@ -84,7 +84,7 @@ document.querySelectorAll('#operations button').forEach(button => {
 const equals = document.querySelector('#equals');
 equals.addEventListener('click', () => {
     secondNumber = getSecondNumber(display.textContent);
-    show(display, '=')
+    show(display, '=');
     result = operate(+firstNumber, operator, +secondNumber);
     show(display, result);
 });    
