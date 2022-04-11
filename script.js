@@ -46,8 +46,8 @@ function show(display, item) {
 function getSecondNumber(displayContent) {
     const operators = ['+', '-', '*', '/'];
     let index;
-    for (let i = 0; i < operators.length; i++) {
-        for (let j = 0; j < displayContent.length; j++) {
+    for (let i = 0; i <= operators.length; i++) {
+        for (let j = 0; j <= displayContent.length; j++) {
             if (displayContent[i] === operators[j]) {
                 index = i;
             }
@@ -76,7 +76,6 @@ document.querySelectorAll('#operations button').forEach(button => {
             firstNumber = display.textContent;
             show(display, button.textContent);
             operator = button.textContent;
-            console.log(operator);
             buttonClicked = true;
         }
     })
