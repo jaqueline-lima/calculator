@@ -89,3 +89,9 @@ equals.addEventListener('click', () => {
     result = operate(+firstNumber, operator, +secondNumber);
     show(display, result);
 });    
+
+const clear = document.querySelector('#clear');
+clear.addEventListener('click', () => {
+    display.textContent = '';
+    buttonClicked = false;
+});
