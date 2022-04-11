@@ -42,7 +42,7 @@ function operate(a, operator, b) {
 function show(display, item) {
     display.textContent += item;
 }
-
+/*
 function getSecondNumber(displayContent) {
     const operators = ['+', '-', '*', '/'];
     let index;
@@ -56,7 +56,7 @@ function getSecondNumber(displayContent) {
     const secondNumber = displayContent.slice(index + 1);
     return secondNumber;
 }
-
+*/
 const display = document.querySelector('#display');
 let firstNumber,
     operator,
@@ -66,25 +66,34 @@ let firstNumber,
 
 document.querySelectorAll('#numbers button').forEach(button => {
     button.addEventListener('click', () => {
+        if (buttonClicked) {
+            display.textContent = '';
+        }
+        buttonClicked = false;
         show(display, button.textContent);
     })
 });
 
 document.querySelectorAll('#operations button').forEach(button => {
     button.addEventListener('click', () => {
-        if (!buttonClicked) {
-            firstNumber = display.textContent;
-            show(display, button.textContent);
+/*        if (!buttonClicked) {
+            firstNumber = display.textContent;  
+//            show(display, button.textContent);
             operator = button.textContent;
             buttonClicked = true;
-        }
+        } */
+        firstNumber = display.textContent;  
+        operator = button.textContent;
+        buttonClicked = true;
     })
 });
 
 const equals = document.querySelector('#equals');
 equals.addEventListener('click', () => {
-    secondNumber = getSecondNumber(display.textContent);
-    show(display, '=');
+//    secondNumber = getSecondNumber(display.textContent);
+    secondNumber = display.textContent;
+//    show(display, '=');
+    display.textContent = '';
     result = operate(+firstNumber, operator, +secondNumber);
     show(display, result);
 });    
