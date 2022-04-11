@@ -11,7 +11,7 @@ function multiply(a, b) {
 }
 
 function divide(a, b) {
-    return a/b;
+    return a / b;
 }
 
 function operate(a, operator, b) {
@@ -85,7 +85,6 @@ document.querySelectorAll('#operations button').forEach(button => {
 const equals = document.querySelector('#equals');
 equals.addEventListener('click', () => {
     secondNumber = getSecondNumber(display.textContent);
-//    console.log(secondNumber);
     show(display, '=')
     result = operate(+firstNumber, operator, +secondNumber);
     show(display, result);
